@@ -6,7 +6,6 @@ Overview of exchanging currency when travelling: https://www.compareremit.com/mo
 """
 
 
-
 def exchange_money(budget, exchange_rate):
     """
 
@@ -25,9 +24,8 @@ def get_change(budget, exchanging_value):
     :param exchanging_value: float - amount of your money you want to exchange now.
     :return: float - amount left of your starting currency after exchanging.
     """
-    
+
     return budget - exchanging_value
-    
 
 
 def get_value_of_bills(denomination, number_of_bills):
@@ -73,4 +71,10 @@ def exchangeable_value(budget, exchange_rate, spread, denomination):
     :return: int - maximum value you can get.
     """
 
-    return int(get_number_of_bills(exchange_money(budget, exchange_rate + exchange_rate * spread / 100), denomination) * denomination)
+    return int(
+        get_number_of_bills(
+            exchange_money(budget, exchange_rate + exchange_rate * spread / 100),
+            denomination,
+        )
+        * denomination
+    )
